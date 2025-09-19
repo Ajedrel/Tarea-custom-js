@@ -8,9 +8,10 @@ function saludar(nombre){
 
 try{
     const payloadEvento = JSON.stringify(github.context.payload, undefined, 2)
+    const name = core.getInput('nombre');
+    const mensaje = saludar(name);
     console.log(`Payload evento: ${payloadEvento}`);
     console.log(`Este es el mensaje a mandar: ${mensaje}`);
-    const name = core.getInput('nombre');
     core.setOutput('mensaje', saludar(name));   
 } catch(error){
     core.setFailed(error.message);
