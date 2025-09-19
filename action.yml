@@ -1,0 +1,14 @@
+name: Mostrar nombre con custom action
+description: Este action manda a llamar otro script js
+inputs:
+  nombre:
+    required: true
+    type: string
+    default: user
+    description: 'Nombre del usuario'
+outputs:
+  mensaje:
+    description: 'Mensaje de saludo'
+runs:
+  using: 'node18'
+  main: 'dist/index.js'
